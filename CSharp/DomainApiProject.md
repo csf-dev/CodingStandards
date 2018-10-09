@@ -16,4 +16,4 @@ The **root namespace** for this project should be just the solution name. Follow
 The contents of the domain API project should be limited to:
 * **[Single Responsibility Interfaces]** for actions and queries which have *a business meaning*.
 
-[Single Responsibility Interfaces]: SingleResponsibilityInterfaces
+[Single Responsibility Interfaces]: SingleResponsibilityInterfaces.md
