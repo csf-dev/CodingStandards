@@ -1,9 +1,9 @@
 # .NET namespaces
 Namespaces offer a mechanism by which to **logically organise** your types. Namespaces are most useful when they are **clear** and **intuitive**.
 
-A pitfall to avoid is over-designing the namespaces within a solution. A good rule of thumb is to keep to within *a maximum of four* levels/segments of name. Most of your types *should appear within the first two/three levels* of namespace. Be careful not to create new namespaces too quickly.
+*Avoid over-designing* the solution's namespace hierarchy; think twice before creating a new namespace. A good rule of thumb is to keep to within *a maximum of four* levels/segments of name. Most of your types *should appear within the first two/three levels* of namespace.
 
-The first level of namespace (sometimes the first two levels) for a given .NET project is reserved for the [root namespace].
+The very first level (sometimes two levels) for a given .NET project is reserved for the [root namespace].
 
 [root namespace]: RootNamespace.md
 

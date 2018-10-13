@@ -1,0 +1,3 @@
+# DomainImplementationProject
+
+[SolutionStructure](SolutionStructure.md)

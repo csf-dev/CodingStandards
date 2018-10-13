@@ -1,0 +1,3 @@
+# TechnologyImplementationProject
+
+[SolutionStructure](SolutionStructure.md)

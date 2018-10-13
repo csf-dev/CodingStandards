@@ -1,0 +1,3 @@
+# ClientProject
+
+[SolutionStructure](SolutionStructure.md)

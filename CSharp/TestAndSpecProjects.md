@@ -1,0 +1,3 @@
+# TestAndSpecProjects
+
+[SolutionStructure](SolutionStructure.md)
