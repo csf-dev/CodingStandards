@@ -1,7 +1,7 @@
 # The domain API project
-Every solution for *application software* should have one project for the **Domain API**. This API is a declaration of *what the application can do*, without any concerns as to *how it is done*. There should be no business rules represented within this project.
+Every solution for *application software* should have one project for the **Domain API**. This API is a declaration of *what the application can do*, without any concerns as to *how it is done*. There should be no logic code in this project.
 
-It is best for an application solution to have only **one** domain API project. There are rarely any practical benefits to splitting it into multiple projects but doing creates often-unwanted dependency problems because circular assembly references are not permitted.
+It is best for an application solution to have only **one** domain API project. There are rarely any practical benefits to come of splitting it into multiple projects. Splitting the domain API up can create often-unwanted dependency problems though, because circular assembly references are not permitted.
 
 ## Naming
 The project name for the domain API project should follow the format `[SolutionName].Domain`. It should use the same [root namespace] as the solution which contains it, without the `.Domain` suffix.
@@ -9,15 +9,17 @@ The project name for the domain API project should follow the format `[SolutionN
 [root namespace]: RootNamespace.md
 
 ## Contents
-In summary - this project should never contain any logic code, nor should it contain any references to implementation-specific technologies. This means that the contents of this assembly should be:
+The domain API project *should never contain any logic code*, nor should it contain any references to implementation-specific technologies. The correct types for this project are:
 
-* [Single responsibility interfaces] representing services/operations exposed by the domain
-    * Including any [request and response types] required by those services
 * [Entity classes]
-* [Value types] and, where applicable, [domain DTOs]
+* [Value types] and [domain DTOs]
+* [Single responsibility interfaces] representing domain services
+    * These services & operations should be those which are useful in the context of [the application domain]
+    * Where appropriate, this includes [request and result types] required by those services
 
+[the application domain]: TheApplicationDomain.md
 [Single responsibility interfaces]: SingleResponsibilityInterfaces.md
-[request and response types]: RequestAndResponseTypes.md
+[request and result types]: RequestAndResultTypes.md
 [Entity classes]: DomainEntities.md
 [Value types]: ValueTypes.md
 [domain DTOs]: DomainDtos.md
