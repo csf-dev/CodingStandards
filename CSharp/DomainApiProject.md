@@ -12,7 +12,7 @@ The project name for the domain API project should follow the format `[SolutionN
 The domain API project *should never contain any logic code*, nor should it contain any references to implementation-specific technologies. The correct types for this project are:
 
 * [Entity classes]
-* [Value types] and [domain DTOs]
+* [Value types]
 * [Single responsibility interfaces] representing domain services
     * These services & operations should be those which are useful in the context of [the application domain]
     * Where appropriate, this includes [request and result types] required by those services
