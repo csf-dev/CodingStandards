@@ -1,3 +1,0 @@
-# DomainDtos
-
-[DomainApiProject](DomainApiProject.md)
