@@ -9,7 +9,7 @@ A good method *is ideally one of two things*; either it is a **[side-effect-free
 ## Neither functions nor actions
 Sometimes it's impossible to avoid methods which both get information and change the application. 
 
-Creating 'impure' methods like this usually be a last resort, because impure methods are less reusable than functions and actions. Where it cannot be avoided, ensure that a separate side-effect-free function and an action are available which (together) perform the task of the 'impure' method. The impure method then becomes a convenient way to call the function and action together.
+Creating 'impure' methods like this should be a last resort; impure methods are less reusable than functions and actions. Where it cannot be avoided, ensure that a separate side-effect-free function and an action are available which (together) perform the task of the 'impure' method. The impure method then becomes a convenient way to call the function and action together.
 
 ### Example
 An example of an impure method is that of a number sequence generator. Each time the `GetNextNumber` method is called, it increments the sequence, returning a different number each time.
