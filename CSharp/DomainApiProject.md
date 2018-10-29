@@ -25,11 +25,15 @@ The domain API project *should never contain any logic code*, nor should it cont
 [domain DTOs]: DomainDtos.md
 
 ## References and packages
-Because this project provides only the API for the application *without any consideration as to how it will be implemented*, this project *should not reference any other projects* within the same solution.
+It is desirable to keep its references and packages *to an absolute minimum*. This project *should not reference any other projects* within the same solution.
 
-Likewise, the domain API project should have *no third-party dependencies* such as NuGet packages. It also should not reference any implementation-specific .NET framework libraries such as `System.Data`.
+Likewise, the domain API project should have as few third-party dependencies (such as NuGet packages) as possible, ideally none. It also should not reference any implementation-specific .NET framework libraries such as `System.Data`.
 
-Remember that anything referenced-by/used-by the domain API project *must be understood by all [client projects] & [technology projects]* which consume the domain API. It is desirable to keep that to a minimum, ideally zero.
+The key test for whether or not or is OK to reference a third party dependency or not within this project is:
+
+> Would it be reasonable for every other component of the application, including client code, to also reference that same dependency?
+
+Anything referenced-by/used-by the domain API project *must be understood by all [client projects] & [technology projects]* which consume the domain API.
 
 Conversely, it is common for every other project in the solution to use the domain API project as a dependency.
 
