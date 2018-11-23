@@ -1,5 +1,5 @@
 # Root namespaces
-Each **project** within a solution is associated with a [.NET namespace]. With one exception (below), *all types in the project must be a descendent of that root namespace*.
+Each **project** within a solution is associated with a [.NET namespace]. *All types in each project must be a descendent of that project's root namespace*.
 
 A **solution** can be thought to have a root namespace also, although it is not enforced by the .NET project system.
 
@@ -14,10 +14,13 @@ Solutions which represent logic that is *intended for reuse by others outside th
 ## Domain logic projects
 Two projects in each solution, the [domain API project] and the [domain implementation project] should use *the same root namespace as their parent solution*.
 
+[domain API project]: DomainApiProject.md
+[domain implementation project]: DomainImplementationProject.md
+
 ## Technology projects
 Projects which contain implementation logic for a specific technology are a little harder to assign a root namespace. The spirit of the following guidelines is to try where possible to relate that technology to the solution domain. Only if that's not possible should a namespace be created for the technology itself.
 
-1. If the technology will need access to types throughout your entire domain API then - like the domain API project - use the same namespace as the solution root.
+1. If the technology will need access to types throughout your entire domain API then - like the [domain API project] - use the same root namespace as the solution root.
 2. If the technology relates only to an existing namespace in your domain API (all of its types will fall within that namespace) then use that namespace as the root of the project.
 3. If the technology does not directly relate to your domain then create a new namespace for the technologies as a direct child of the solution root. This will be the root namespace for the project.
 

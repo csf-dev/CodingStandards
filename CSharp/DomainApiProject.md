@@ -31,7 +31,7 @@ Likewise, the domain API project should have as few third-party dependencies (su
 
 The key test for whether or not or is OK to reference a third party dependency or not within this project is:
 
-> Would it be reasonable for every other component of the application, including client code, to also reference that same dependency?
+> Would it be reasonable for every other component of the application, including client code, to also reference that same dependency? If not then the domain API project should not reference that dependency.
 
 Anything referenced-by/used-by the domain API project *must be understood by all [client projects] & [technology projects]* which consume the domain API.
 
