@@ -1,3 +1,0 @@
-# RequestAndResponseTypes
-
-[DomainApiProject](DomainApiProject.md)

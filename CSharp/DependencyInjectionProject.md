@@ -1,0 +1,3 @@
+# DependencyInjectionProject
+
+[SolutionStructure](SolutionStructure.md)

@@ -1,5 +1,5 @@
 # Domain entities
-Entities are 'things' which have a unique identity within your application. They are often persisted to some kind of database. Entities are always **classes** and may have a simple inheritance hierarchy.
+Entities are 'things' which have a unique identity within your application. They are often persisted in some way, such as a database. Entities are always **classes** and may have a simple inheritance hierarchy.
 
 ## Use an Entity base class
 All entity classes must have an identity and related behaviour. In this case it makes sense to use a base class to provide that common functionality.

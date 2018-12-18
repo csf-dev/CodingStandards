@@ -1,7 +1,7 @@
 # State-changing actions
 An action is [a type of method] which is used within your application design, which makes a change to the application's state.
 
-Whereas [functions] ask questions about the state of the application without changing anything, actions often *do not return any information*. Actions might make a change to data in a database, change data on a filesystem, or make an external API call which indicates a chance should be performed upon a remote system.
+Whereas [functions] ask questions about the state of the application without changing anything, actions often *do not return any information*. Actions might update data in a database, write to a filesystem, or call an external API call which itself effects a change.
 
 [a type of method]: MethodDesign.md
 [functions]: SideEffectFreeFunctions.md
@@ -30,9 +30,14 @@ Imagine an application for users to order at a restaurant using pre-paid credit.
 * The user doesn't have sufficient credit to make the order
 * The restaurant is about to close and the kitchen is not accepting new orders
 
-Here's the definition of the corresponding action method, describing the above logic. As with the previous example, the action method itself is shown within a [single responsibility interface].
+Here's the definition of the corresponding action method: `OrderItem`, describing the above logic. The action method itself is shown within a [single responsibility interface]. Also shown are the request and result types which might go along with this action declaration.
 
 ```csharp
+public interface IOrdersItemFromKitchen
+{
+    OrderItemResult OrderItem(OrderItemRequest request);
+}
+
 public class OrderItemRequest
 {
     public int RemainingCredits { get; set; }
@@ -45,11 +50,6 @@ public class OrderItemResult
     public bool KitchenIsClosed { get; set; }
     public bool ItemNotInStock { get; set; }
     public bool InsufficientCredit { get; set; }
-}
-
-public interface IOrdersItemFromKitchen
-{
-    OrderItemResult OrderItem(OrderItemRequest request);
 }
 ````
 

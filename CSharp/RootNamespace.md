@@ -9,7 +9,7 @@ A **solution** can be thought to have a root namespace also, although it is not 
 .NET solutions for application software should use a root namespace which is comprised of **a single naming segment**. This should be a short name for the app. There is little to gain from using a more complex root namespace for an application, since it is unlikely that its libraries will be used outside the organisation where it is developed.
 
 ## For shared library solutions
-Solutions which represent logic that is *intended for reuse by others outside the organisation* may use a two-segment root namespace. Typically this means a library which is intended for release via NuGet. This should be in the format `OrganisationName.LibraryName`. This helps avoid namespace clashes with other packages.
+Solutions which represent logic that is *intended for reuse by others outside the organisation* (such as release via NuGet) may use a two-segment root namespace. This should be in the format `OrganisationName.LibraryName`. Including the organisation name helps avoid namespace clashes with other packages.
 
 ## Domain logic projects
 Two projects in each solution, the [domain API project] and the [domain implementation project] should use *the same root namespace as their parent solution*.
@@ -17,7 +17,7 @@ Two projects in each solution, the [domain API project] and the [domain implemen
 [domain API project]: DomainApiProject.md
 [domain implementation project]: DomainImplementationProject.md
 
-## Technology projects
+## Gateway projects
 Projects which contain implementation logic for a specific technology are a little harder to assign a root namespace. The spirit of the following guidelines is to try where possible to relate that technology to the solution domain. Only if that's not possible should a namespace be created for the technology itself.
 
 1. If the technology will need access to types throughout your entire domain API then - like the [domain API project] - use the same root namespace as the solution root.
