@@ -3,6 +3,8 @@ A good solution structure promotes *scalability*, *abstraction* of technical con
 
 Solution structure primarily refers to the organisation of **projects**, which usually correspond to compiled assemblies, for example **libraries** (DLL files). In solutions for applications software, the projects should be designed to allow expansion as new features and functionality is added. This tends to lead to the following categories of project. Each has its own linked information.
 
+![Solution structure diagram](SolutionStructure.jpg)
+
 ## Domain logic projects
 Domain logic (aka "Business logic") is the rules of how the application functions. Most applications have two domain logic projects, a [domain API project] and a [domain implementation project].
 
