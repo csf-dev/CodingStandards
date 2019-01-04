@@ -13,6 +13,15 @@ For compatibility with ORM software such as [NHibernate], all non-private member
 
 [NHibernate]: http://nhibernate.info/
 
+## Avoid 'business logic' methods
+It is possible to place methods and functionality upon entity objects. Beware doing this though, because *the only way in which an entity object's functionality can be extended* is by subclassing.
+
+Because entities should all be declared in [the domain API project], they *should not have any methods which implement business logic*. Instead, declare [a single responsibility interface] for this functionality and implement it in [the domain implementation project].
+
+[the domain API project]: DomainApiProject.md
+[a single responsibility interface]: SingleResponsibilityInterfaces.md
+[the domain implementation project]: DomainImplementationProject.md
+
 ## Entity relationships
 ### Many to one
 Where an entity has a relationship to another (many-to-one), this should be represented using an object reference to that related entity. *Avoid using primitive foreign key values* in entity classes.
