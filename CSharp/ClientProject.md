@@ -1,5 +1,5 @@
 # Client projects
-Client projects are how the application interacts with users or 'systems external to itself'. This could mean any of several things:
+Client projects are the way by which external systems or users *consume or interact with* the application. Often this is a UI of some kind, but it could just as readily be an API. Here are some examples of client projects.
 
 * An MVC web application
 * A REST/JSON web API
